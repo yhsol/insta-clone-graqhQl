@@ -1,5 +1,17 @@
 # insta clone
 
+## datamodel
+
+- type name
+
+  - 타입의 이름(title)은 단수.
+  - 타입 내의 각 아이템들 중 여러개가 포함 될 수 있는 것, 즉 타입을 배열의 형태로 갖는 경우는 복수형태로 표현.
+    (front-end 에서 map 작업 시 헷갈리지 않게.)
+
+- type Query
+  - 타입을 지정한 뒤 datamodel 에서 삭제하면 prisma 에서 에러가 나타난다. 삭제된 부분을 찾지 못한다는 에러이다. 이 경우에는 해당 Query 를 prisma 에서 삭제한 뒤 datamodel 을 다시 prisma 에 deploy 하면 해결 된다.
+    - but 작업이 꽤 진행되니 상태에서 이렇게 하게되면 해당 Query 가 갖고 있던 데이터들도 같이 날아가버리는 게 아닌가..?
+
 ## description of each file
 
 - nodemon.json
