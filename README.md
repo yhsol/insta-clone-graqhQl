@@ -29,7 +29,11 @@
     server.express.use(logger("dev")) 와 같이 logger(미들웨어)를 쓸 수 있다.
 
 - schema
+
   - api 폴더를 만들고 그 안에 typeDefs(graphql 파일) 과 resolvers(js 파일)을 만들고
     그 파일들을 schema.js 에서 merge 한다.
   - path 를 통해 각각 type 과 resolver 를 가져오는 경로를 설정하기 때문에 api 폴더 아래에는
     type 과 resolver 만을 둬야한다. (resolver 인 js 파일만 뒤야한다.)
+
+- gitignore
+  - prisma.yml 파일을 추가해야 한다. 이메일 등의 정보가 있기 때문에 커밋하면 안된다.
