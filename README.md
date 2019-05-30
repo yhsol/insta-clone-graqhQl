@@ -22,8 +22,14 @@
     (front-end 에서 map 작업 시 헷갈리지 않게.)
 
 - type Query
+
   - 타입을 지정한 뒤 datamodel 에서 삭제하면 prisma 에서 에러가 나타난다. 삭제된 부분을 찾지 못한다는 에러이다. 이 경우에는 해당 Query 를 prisma 에서 삭제한 뒤 datamodel 을 다시 prisma 에 deploy 하면 해결 된다.
     - but 작업이 꽤 진행되니 상태에서 이렇게 하게되면 해당 Query 가 갖고 있던 데이터들도 같이 날아가버리는 게 아닌가..?
+
+- models.graphql
+  - 데이터 구조를 datamodel.prisma 에 담아뒀었는데 graphql 은 prisma 를 이해하지 못하기 때문에 이 구조를 다시
+    models.graphql 파일에 넣어줘야 한다.
+  - api 내의 Query 들이 prisma 에 접근할 수 없기 때문에 graphql 에 데이터 구조를 담아서 접근 가능하게 하는 것.
 
 ## description of each file
 
@@ -51,8 +57,3 @@
 - gitignore
 
   - prisma.yml 파일을 추가해야 한다. 이메일 등의 정보가 있기 때문에 커밋하면 안된다.
-
-- models.graphql
-  - 데이터 구조를 datamodel.prisma 에 담아뒀었는데 graphql 은 prisma 를 이해하지 못하기 때문에 이 구조를 다시
-    models.graphql 파일에 넣어줘야 한다.
-  - api 내의 Query 들이 prisma 에 접근할 수 없기 때문에 graphql 에 데이터 구조를 담아서 접근 가능하게 하는 것.
