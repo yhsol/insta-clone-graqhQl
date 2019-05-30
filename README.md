@@ -1,5 +1,18 @@
 # insta clone
 
+## insta clone function
+
+- create account
+- log in with confirm secret
+- see feed
+- see user profile
+- follow / unfollow
+- like / unlike
+- comment
+- search by user / caption / location
+- see the full photo
+- edit my profile
+
 ## datamodel
 
 - type name
@@ -36,4 +49,10 @@
     type 과 resolver 만을 둬야한다. (resolver 인 js 파일만 뒤야한다.)
 
 - gitignore
+
   - prisma.yml 파일을 추가해야 한다. 이메일 등의 정보가 있기 때문에 커밋하면 안된다.
+
+- models.graphql
+  - 데이터 구조를 datamodel.prisma 에 담아뒀었는데 graphql 은 prisma 를 이해하지 못하기 때문에 이 구조를 다시
+    models.graphql 파일에 넣어줘야 한다.
+  - api 내의 Query 들이 prisma 에 접근할 수 없기 때문에 graphql 에 데이터 구조를 담아서 접근 가능하게 하는 것.
