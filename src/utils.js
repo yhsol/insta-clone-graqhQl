@@ -27,7 +27,7 @@ export const sendSecretMail = (adress, secret) => {
     from: "instaclone@instaclone.com",
     to: adress,
     subject: "Login Secret For InstaClone",
-    html: `Hello! Your login secret is <b>${secret}.</b><br />Copy Paste on the App/Website`
+    html: `Hello! Your login secret is <div><b>${secret}.</b></div>Copy Paste on the App/Website`
   };
   return sendMail(email);
 };
