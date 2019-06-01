@@ -5,6 +5,7 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 import { adjectives, nouns } from "./words";
 import nodemailer from "nodemailer";
 import sgTransport from "nodemailer-sendgrid-transport";
+import jwt from "jsonwebtoken";
 
 export const secretGenerator = () => {
   const randomNumber = Math.floor(Math.random() * adjectives.length);
@@ -27,7 +28,9 @@ export const sendSecretMail = (adress, secret) => {
     from: "instaclone@instaclone.com",
     to: adress,
     subject: "Login Secret For InstaClone",
-    html: `Hello! Your login secret is <div><b>${secret}.</b></div>Copy Paste on the App/Website`
+    html: `Hello! Your login secret is <div><b>${secret}</b></div>Copy Paste on the App/Website`
   };
   return sendMail(email);
 };
+
+export const generateToken = id => jwt.sign({ id }, process.env.JWT_SECRET);
