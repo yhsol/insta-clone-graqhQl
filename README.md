@@ -12,6 +12,12 @@
 - search by user / caption / location
 - see the full photo
 - edit my profile
+- see notification
+
+## usage
+
+- prisma 에 포함되어 있는 함수를 쓸 때는 prisma playground 에서 확인하고 쓰면 좋다.
+  - user 와 users, post 와 posts 가 포함하고 있는 요소들이 달라서 확인해서 쓰면 좋겠다.
 
 ## datamodel
 
