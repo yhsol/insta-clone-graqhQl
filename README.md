@@ -57,3 +57,8 @@
 - gitignore
 
   - prisma.yml 파일을 추가해야 한다. 이메일 등의 정보가 있기 때문에 커밋하면 안된다.
+
+- middlewares
+  - isAuthenticated 라는 함수를 만들고 props 로 context 로 부터 가져온 request 를 지정한다.
+  - request 에 user 가 없다면 에러를 발생시킨다.
+  - 해당 미들웨어를 사용하여 user 의 인증을 확인 할 수 있다.
