@@ -12,8 +12,8 @@ export default {
     }
   },
   User: {
-    fullname: (_, __, { request }) => {
-      console.log(request);
+    fullname: parent => {
+      return `${parent.firstName} ${parent.lastName}`;
     }
   }
 };
