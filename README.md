@@ -65,6 +65,12 @@
   - prisma.yml 파일을 추가해야 한다. 이메일 등의 정보가 있기 때문에 커밋하면 안된다.
 
 - middlewares
+
   - isAuthenticated 라는 함수를 만들고 props 로 context 로 부터 가져온 request 를 지정한다.
   - request 에 user 가 없다면 에러를 발생시킨다.
   - 해당 미들웨어를 사용하여 user 의 인증을 확인 할 수 있다.
+
+- fragment
+  - resolver 에서 더 많은 정보를 가져오려 할 때 갖고 오려는 정보를 fragment 파일에 담고,
+    resolver 에서 type query 뒤에 \$fragment 를 붙여서 사용한다.
+    해당 query 와 연결되어 있는 정보들을 갖고오기 편하다.
