@@ -4,9 +4,9 @@ export default {
   Query: {
     seeUser: async (_, args) => {
       const { id } = args;
-      const userProfile = await prisma.user({ id });
-      const postsProfile = await prisma.user({ id }).posts;
-      return { userProfile, postsProfile };
+      const user = await prisma.user({ id });
+      const posts = await prisma.user({ id }).posts();
+      return { user, posts };
     }
   }
 };

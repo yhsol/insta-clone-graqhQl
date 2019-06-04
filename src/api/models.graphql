@@ -2,11 +2,13 @@ type User {
   id: ID!
   username: String!
   email: String!
-  firstName: String!
+  firstName: String
   lastName: String
+  fullname: String
   bio: String
   following: [User!]!
   followers: [User!]!
+  amIFollowing: Boolean!
   posts: [Post!]!
   likes: [Like!]!
   comments: [Comment!]!
@@ -22,6 +24,7 @@ type Post {
   caption: String!
   likes: [Like!]!
   comments: [Comment!]!
+  isLiked: Boolean!
 }
 
 type Like {
@@ -58,6 +61,6 @@ type Message {
 }
 
 type UserProfile {
-  userProfile: User!
-  postsProfile: [Post!]!
+  user: User!
+  posts: [Post!]!
 }

@@ -7,8 +7,13 @@ export default {
       isAuthenticated(request);
       const { user } = request;
       const userProfile = await prisma.user({ id: user.id });
-      const postsProfile = await prisma.user({ id: user.id }).posts;
-      return { userProfile, postsProfile };
+      const posts = await prisma.user({ id: user.id }).posts();
+      return { user: userProfile, posts };
+    }
+  },
+  User: {
+    fullname: (_, __, { request }) => {
+      console.log(request);
     }
   }
 };
