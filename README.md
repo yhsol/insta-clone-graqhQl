@@ -59,6 +59,7 @@
     그 파일들을 schema.js 에서 merge 한다.
   - path 를 통해 각각 type 과 resolver 를 가져오는 경로를 설정하기 때문에 api 폴더 아래에는
     type 과 resolver 만을 둬야한다. (resolver 인 js 파일만 뒤야한다.)
+  - merge 라는 기능으로 withRouter 를 쓰듯이 다양한 활용 방법이 가능하다.
 
 - gitignore
 
@@ -80,3 +81,4 @@
   - 지정되어 있는 type 의 요소들을 조합해서 만들어 내는 값들을 갖는다.
   - 예를들어 fullname 이라는 값을 만들 때 database 에 해당 값을 직접 저장하는 것이 아닌,
     기존에 갖고 있는 firstName 과 lastName 값을 조합해서 만들 수 있다.
+  - 그리고 schema 에서 각각의 type 과 resolver 를 merge 하고 있기 때문에 fullname 을 구현하는 로직을 me 라는 resolver 파일에 만들더라도 다른 resolver 파일(예를 들어 seeUser)에서도 확인 할 수 있다.
