@@ -71,6 +71,12 @@
   - 해당 미들웨어를 사용하여 user 의 인증을 확인 할 수 있다.
 
 - fragment
+
   - resolver 에서 더 많은 정보를 가져오려 할 때 갖고 오려는 정보를 fragment 파일에 담고,
     resolver 에서 type query 뒤에 \$fragment 를 붙여서 사용한다.
     해당 query 와 연결되어 있는 정보들을 갖고오기 편하다.
+
+- computed file
+  - 지정되어 있는 type 의 요소들을 조합해서 만들어 내는 값들을 갖는다.
+  - 예를들어 fullname 이라는 값을 만들 때 database 에 해당 값을 직접 저장하는 것이 아닌,
+    기존에 갖고 있는 firstName 과 lastName 값을 조합해서 만들 수 있다.
