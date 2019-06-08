@@ -33,9 +33,16 @@
     - but 작업이 꽤 진행되니 상태에서 이렇게 하게되면 해당 Query 가 갖고 있던 데이터들도 같이 날아가버리는 게 아닌가..?
 
 - models.graphql
+
   - 데이터 구조를 datamodel.prisma 에 담아뒀었는데 graphql 은 prisma 를 이해하지 못하기 때문에 이 구조를 다시
     models.graphql 파일에 넣어줘야 한다.
   - api 내의 Query 들이 prisma 에 접근할 수 없기 때문에 graphql 에 데이터 구조를 담아서 접근 가능하게 하는 것.
+
+- @relation
+
+  - when to use: 예를 들어 post 를 삭제하는 데, post 에 포함되어 있는 like 와 file 등이 required 라면 해당 구조에 위배되기 때문에 에러가 난다. 이 때 relation 을 통해 서로 묶어주면 post 를 삭제했을 때 like 와 file 등이 같이 삭제 된다.
+  - 그렇지만 post 에 포함되는 like 나 file 이 required 가 아니라면 이렇게 하지 않아도 된다. 해당 요소들을 required 로 설정하지 않는 다면 위의 post 가 삭제 되었을 때 이 값들은 null 이 된다.(prisma 의 default 설정이다.) 즉, 삭제만 할 경우 이게 더 효율적이다.
+  - 그 외의 활용방법은 그 때 찾아보면 될 듯.
 
 ## description of each file
 
