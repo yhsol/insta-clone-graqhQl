@@ -12,7 +12,9 @@
 - search by user / caption / location
 - see the full photo
 - edit my profile
-- see notification
+- see romms
+- see room
+- message
 
 ## usage
 
@@ -43,6 +45,9 @@
   - when to use: 예를 들어 post 를 삭제하는 데, post 에 포함되어 있는 like 와 file 등이 required 라면 해당 구조에 위배되기 때문에 에러가 난다. 이 때 relation 을 통해 서로 묶어주면 post 를 삭제했을 때 like 와 file 등이 같이 삭제 된다.
   - 그렇지만 post 에 포함되는 like 나 file 이 required 가 아니라면 이렇게 하지 않아도 된다. 해당 요소들을 required 로 설정하지 않는 다면 위의 post 가 삭제 되었을 때 이 값들은 null 이 된다.(prisma 의 default 설정이다.) 즉, 삭제만 할 경우 이게 더 효율적이다.
   - 그 외의 활용방법은 그 때 찾아보면 될 듯.
+
+- createdAt & updatedAt
+  - 해당 요소들은 frontend 에서 date 를 표현하는 용도로도 쓰이지만 user 및 following 하는 사람들의 post 같은 요소들을 정리해서 볼 때에도 쓰인다.
 
 ## description of each file
 
