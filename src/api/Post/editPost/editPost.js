@@ -20,7 +20,7 @@ export default {
           return prisma.deletePost({ id });
         }
       } else {
-        throw Error("not working!");
+        throw Error("it's not working!");
       }
     }
   }
