@@ -18,6 +18,9 @@ type User {
   loginSecret: String
   createdAt: String
   updatedAt: String
+  postsCount: Int
+  followingCount: Int
+  followersCount: Int
 }
 
 type Post {
@@ -32,6 +35,7 @@ type Post {
   likeCount: Int!
   createdAt: String
   updatedAt: String
+  commentCount: Int!
 }
 
 type Like {
@@ -73,13 +77,6 @@ type Message {
   from: User!
   to: User!
   room: Room!
-  createdAt: String
-  updatedAt: String
-}
-
-type UserProfile {
-  user: User!
-  posts: [Post!]!
   createdAt: String
   updatedAt: String
 }
