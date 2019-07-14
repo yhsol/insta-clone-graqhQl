@@ -41,6 +41,7 @@ type Comment {
   id: ID! @id
   text: String!
   user: User @relation(name: "CommentOfUser")
+  username: String! @unique
   post: Post @relation(name: "CommentOfPost")
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt

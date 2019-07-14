@@ -50,6 +50,7 @@ type Comment {
   id: ID!
   text: String!
   user: User
+  username: String
   post: Post
   createdAt: String
   updatedAt: String
