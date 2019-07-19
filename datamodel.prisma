@@ -1,6 +1,6 @@
 type User {
   id: ID! @id
-  avatar: String
+  avatar: String @default(value: "https://imageog.flaticon.com/icons/png/512/174/174855.png?size=1200x630x0.5f&pad=10,10,10,10&ext=png&bg=FFFFFFFF")
   username: String! @unique
   email: String! @unique
   firstName: String! @default(value: "first name")
@@ -41,7 +41,6 @@ type Comment {
   id: ID! @id
   text: String!
   user: User @relation(name: "CommentOfUser")
-  username: String! @unique
   post: Post @relation(name: "CommentOfPost")
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
